@@ -1,0 +1,13 @@
+<div class="jumbotron">
+
+<h1>Usuń kategorię:</h1>
+<h2><%= @category.name %></h2>
+<%= form_for(:category, :url=> {:action => 'remove', :id => @category.id}) do |field| %>
+<p>Jesteś pewny?</p>
+<div class="text-center">
+	<%= submit_tag("Usuń", :class=>'btn btn-danger') %>
+	<%= link_to("powrót", {:action=>'index'}, :class=>'btn btn-default')%>
+</div>
+<% end %>
+
+</div>

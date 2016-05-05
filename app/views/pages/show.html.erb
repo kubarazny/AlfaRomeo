@@ -1,0 +1,33 @@
+<div class="jumbotron">
+
+<h1>Pokaż stronę</h1>
+<table class="table table-striped">
+	<tr>
+		<th>Kategoria</th>
+		<td><%= @page.category.name %></td>
+	</tr>
+	<tr>
+		<th>Nazwa</th>
+		<td><%= @page.name %></td>
+	</tr>
+	<tr>
+		<th>Pozycja</th>
+		<td><%= @page.position %></td>
+	</tr>
+	<tr>
+		<th>Czy jest widoczna?</th>
+		<td><%= @page.visible ? 'Tak' : 'Nie' %></td>
+	</tr>
+		<tr>
+		<th>Utworzona:</th>
+		<td><%= @page.created_at %></td>
+	</tr>
+		<tr>
+		<th>Zaktualizowana:</th>
+		<td><%= @page.updated_at %></td>
+	</tr>
+</table>
+<div class="text-center">
+<%=link_to("powrót", {:action=>'index', :category_id => @categories.id}, :class=>'btn btn-default') %>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="jumbotron">
+	<h1>Pokaż galerię</h1>
+	<table class="table table-striped">
+		<tr>
+			<th>Nazwa</th>
+			<td><%= @gallery.name %></td>
+		</tr>
+		<tr>
+			<th>Pozycja</th>
+			<td><%= @gallery.position %></td>
+		</tr>
+		<tr>
+			<th>Czy jest widoczna?</th>
+			<td><%= @gallery.visible ? 'Tak' : 'Nie' %></td>
+		</tr>
+		<tr>
+			<th>Zdjęcie:</th>
+			<td><%= image_tag(@gallery.photo) %></td>
+		</tr>
+		<tr>
+			<th>Opis:</th>
+			<td><%= @gallery.description %></td>
+		</tr>
+		<tr>
+			<th>Utworzona:</th>
+			<td><%= @gallery.created_at %></td>
+		</tr>
+		<tr>
+			<th>Zaktualizowana:</th>
+			<td><%= @gallery.updated_at %></td>
+		</tr>
+	</table>
+	<div class="text-center">
+		<%=link_to("powrót", {:action=>'index'}, :class=>'btn btn-default') %>
+	</div>

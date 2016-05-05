@@ -1,0 +1,19 @@
+<% @page_title = @article.name %>
+<section id="content">
+    <div class="container">
+        <h2><%= @article.name %></h2>
+        <div class="article">
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                    <%= image_tag(@article.photo.url, :class => 'img-responsive img-thumbnail') %>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <p><%= raw(@article.content) %></p>
+                    <hr/>
+                    <p><%= link_to("back", {:controller => 'public', :action => 'index'}, :class => 'btn btn-info') %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

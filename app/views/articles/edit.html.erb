@@ -1,0 +1,12 @@
+<div class="jumbotron">
+
+<h1>Edit article <%= @article.name %></h1>
+<%= form_for(:article, :url=> {:action => 'update', :id=>@article.id, :page_id => @pages.id}) do |field| %>
+<%= render(:partial => "form", :locals => {:field => field}) %
+<div class="text-center">
+	<%= submit_tag("Aktualizuj", :class=>'btn btn-success') %>
+	<%=link_to("powrót", {:action=>'index', :page_id => @pages.id}, :class=>'btn btn-default') %>
+</div>
+<% end %>
+
+</div>

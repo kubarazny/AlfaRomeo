@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Alfa Romeo
+			<%= "| #{@page_title}" if @page_title %>
+		</title>
+		<%= stylesheet_link_tag('application', :media => 'all' ) %>
+		<%= javascript_include_tag('application') %>
+		<script>
+
+			$(document).ready(function () {
+
+				var docHeight = $(window).height();
+				var footerHeight = $('#footer').outerHeight();
+				var footerTop = $('#footer').position().top + footerHeight;
+
+				if (footerTop < docHeight) {
+					$('#footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<%= render(:partial => "menu") %>
+
+		<%= yield %>
+
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<p class="text-muted">
+						Marysia Wójcik, Mateusz Rajca, Jakub Raźny, Dawid Banaś
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="jumbotron">
+
+<h1>Pokaż kategorię</h1>
+<table class="table table-striped">
+	<tr>
+		<th>Nazwa</th>
+		<td><%= @category.name %></td>
+	</tr>
+	<tr>
+		<th>Pozycja</th>
+		<td><%= @category.position %></td>
+	</tr>
+	<tr>
+		<th>Czy jest widoczna?</th>
+		<td><%= @category.visible ? 'Tak' : 'Nie' %></td>
+	</tr>
+		<tr>
+		<th>Utworzona:</th>
+		<td><%= @category.created_at %></td>
+	</tr>
+		<tr>
+		<th>Zaktualizowana:</th>
+		<td><%= @category.updated_at %></td>
+	</tr>
+</table>
+<div class="text-center">
+<%=link_to("powrót", {:action=>'index'}, :class=>'btn btn-default') %>
+
+</div>

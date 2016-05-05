@@ -1,0 +1,29 @@
+<div class="jumbotron">
+	<h1>Artykuły</h1>
+	<%= link_to("Dodaj nowy artykuł", {:action=>'new', :page_id => @pages.id}, :class => 'btn btn-mini btn-primary') %>
+	<p style="text-align: right;">Liczba artykułów <%= @article.size %></p>
+	<table class="table table-striped">
+		<tr class="info">
+			<th>Pozycja</th>
+			<th>Kategoria</th>
+			<th>Nazwa</th>
+			<th>Widoczność</th>
+			<th>Akcje</th>
+		</tr>
+		<% @article.each do |article| %>
+		<tr>
+			<td><%= article.position %></td>
+			<td><%= article.page.name %></td>
+			<td><%= article.name %></td>
+			<td><%= view_status(article.visible)%></td>
+			<td class="actions">
+				<%= link_to("Pokaż", {:action=>'show', :id=>article.id, :page_id => @pages.id}, :class=>'btn btn-xs btn-default') %>
+				<%= link_to("Edycja", {:action=>'edit', :id=>article.id, :page_id => @pages.id}, :class=>'btn btn-xs btn-primary') %>
+				<%= link_to("Usuń", {:action=>'delete', :id=>article.id, :page_id => @pages.id}, :class=>'btn btn-xs btn-danger') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+			<%= link_to("powrót do stron", {:controller => 'pages', :action => 'index', :category_id => @pages.category_id}, :class=> 'btn btn-xs btn-default') %>
+
+</div>

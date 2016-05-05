@@ -1,0 +1,24 @@
+<div class="jumbotron">
+	<h1>Użytkownicy</h1>
+	<%= link_to("Dodaj nowego użytkownika", {:action=>'new'}, :class => 'btn btn-mini btn-primary') %>
+	<p style="text-align: right;">Liczba użytkowników: <%= @user.size %></p>
+	<table class="table table-striped">
+		<tr class="info">
+			<th>Użytkownik</th>
+			<th>Imię i nazwisko</th>
+			<th>Email</th>
+			<th>Akcje</th>
+		</tr>
+		<% @user.each do |user| %>
+		<tr>
+			<td><%= user.user %></td>
+			<td><%= user.name + " " + user.surname %></td>
+			<td><%= mail_to(user.email) %></td>
+			<td class="actions">
+				<%= link_to("Edycja", {:action=>'edit', :id=>user.id}, :class=>'btn btn-xs btn-primary') %>
+				<%= link_to("Usuń", {:action=>'delete', :id=>user.id}, :class=>'btn btn-xs btn-danger') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

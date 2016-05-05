@@ -1,0 +1,13 @@
+<div class="jumbotron">
+
+<h1>Usuń użytkownika:</h1>
+<h2><%= @user.user %></h2>
+<%= form_for(:user, :url=> {:action => 'remove', :id => @user.id}) do |field| %>
+<p>Jesteś pewny?</p>
+<div class="text-center">
+	<%= submit_tag("Usuń", :class=>'btn btn-danger') %>
+	<%= link_to("powrót", {:action=>'index'}, :class=>'btn btn-default')%>
+</div>
+<% end %>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="jumbotron">
+
+<h1>Usuń zdjęcie:</h1>
+<h2><%= @photo.name %></h2>
+<%= form_for(:photo, :url=> {:action => 'remove', :id => @photo.id, :gallery_id=>@galleries.id}) do |field| %>
+<p>Jesteś pewny?</p>
+<div class="text-center">
+	<%= submit_tag("Usuń", :class=>'btn btn-danger') %>
+	<%= link_to("powrót", {:action=>'index', :gallery_id=>@galleries.id}, :class=>'btn btn-default')%>
+</div>
+<% end %>
+
+</div>

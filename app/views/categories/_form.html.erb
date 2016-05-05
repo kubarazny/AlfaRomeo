@@ -1,0 +1,14 @@
+<table class="table table-striped">
+	<tr>
+		<th><%= field.label(:name, "Nazwa") %></th>
+		<td><%= field.text_field(:name, :class=>'form-control', :placeholder => "Wprowadź nazwę") %></td>
+	</tr>
+	<tr>
+		<th><%= field.label(:position, "Pozycja") %></th>
+		<td><%= field.select(:position, 1..@counter, :class=>'form-control', :selected => @counter) %></td>
+	</tr>
+	<tr>
+		<th><%= field.label(:visible, "Czy jest widoczna?") %></th>
+		<td><%= field.check_box(:visible) %></td>
+	</tr>
+</table>

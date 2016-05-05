@@ -1,0 +1,35 @@
+ <!-- szablon czesciowy dla formularza -->
+<%= error(@photo) %>
+<table class="table table-striped">
+
+	<tr>
+		<th><%= field.label(:gallery_id, "Galeria") %></th>
+		<td><%= field.select(:gallery_id, @gallery.map { |t| [t.name, t.id] }, :class=>'form-control') %></td>
+	</tr>
+	<tr>
+		<th><%= field.label(:name) %></th>
+		<td><%= field.text_field(:name, :class=>'form-control', :placeholder => "Wprowadź nazwę") %></td>
+	</tr>
+	<tr>
+		<th><%= field.label(:position, "Pozycja") %></th>
+		<td><%= field.select(:position, 1..@counter, :class=>'form-control', :selected => @counter) %></td>
+	</tr>
+	<tr>
+		<th><%= field.label(:visible, "Czy jest widoczne?") %></th>
+		<td><%= field.check_box(:visible) %></td>
+	</tr>
+	<% if !@photo.photo.blank? %>
+	<tr>
+		<th>Zdjęcie:</th>
+		<td><%= image_tag(@photo.photo) %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<th><%= field.label(:photo, "Zdjęcie") %></th>
+		<td><%= field.file_field(:photo) %></td>
+	</tr>
+	<tr>
+		<th><%= field.label(:description, "Opis") %></th>
+		<td><%= field.text_area(:description, :class=>'form-control') %></td>
+	</tr>
+</table>

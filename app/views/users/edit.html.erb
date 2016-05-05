@@ -1,0 +1,12 @@
+<div class="jumbotron">
+
+<h1>Edytuj użytkownika <%= @user.user %></h1>
+<%= form_for(:user, :url=> {:action => 'update', :id=>@user.id}) do |field| %>
+<%= render(:partial => "form", :locals => {:field => field}) %> <!-- partial - dla szablonow czesciowych, locals - przekazywanie zmiennych lokalnych, odwolanie sie do zmiennej field i przekazanie jej do generowanego tutaj widoku(render) -->
+<div class="text-center">
+	<%= submit_tag("Aktualizuj", :class=>'btn btn-success') %>
+	<%=link_to("powrót", {:action=>'index'}, :class=>'btn btn-default') %>
+</div>
+<% end %>
+
+</div>

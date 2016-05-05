@@ -1,0 +1,31 @@
+<div class="jumbotron">
+	<h1>Zdjęcia</h1>
+	<%= link_to("Dodaj nowe zdjęcie", {:action=>'new', :gallery_id=>@galleries.id}, :class => 'btn btn-mini btn-primary') %>
+	<p style="text-align: right;">Liczba zdjęć: <%= @photo.size %></p>
+	<table class="table table-striped">
+		<tr class="info">
+			<th>Nazwa</th>
+			<th>Pozycja</th>
+			<th>Zdjęcie</th>
+			<th>Widoczność</th>
+			<th>Opis</th>
+			<th>Akcje</th>
+		</tr>
+		<% @photo.each do |photo| %>
+		<tr>
+			<td><%= photo.name %></td>
+			<td><%= photo.position %></td>
+			<td><%= image_tag photo.photo.url(:thumb) %></td>
+			<td><%= view_status(photo.visible)%></td>
+			<td><%= truncate(photo.description, :lenght => 30, :omission => "[...]" ) %></td>
+			<td class="actions">
+				<%= link_to("Pokaż", {:action=>'show', :id=>photo.id, :gallery_id=>@galleries.id}, :class=>'btn btn-xs btn-default') %>
+				<%= link_to("Edycja", {:action=>'edit', :id=>photo.id, :gallery_id=>@galleries.id}, :class=>'btn btn-xs btn-primary') %>
+				<%= link_to("Usuń", {:action=>'delete', :id=>photo.id, :gallery_id=>@galleries.id}, :class=>'btn btn-xs btn-danger') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+
+	<%= link_to("powrót do kategorii", {:controller => 'galleries', :action => 'index'}, :class => 'btn btn-xs btn-default') %>
+</div>

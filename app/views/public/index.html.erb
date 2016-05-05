@@ -1,0 +1,52 @@
+<% @page_title = "Strona główna" %>
+
+<section id="top3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 main_header">
+                <h1>Alfa Romeo</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 articles_header">
+                <h1>Najnowsze artykuły</h1>
+            </div>
+        </div>
+        <div class="row">
+            <% @articles.each do |article| %>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
+                <div class="article">
+                    <%= image_tag(article.photo.url(:thumb), :class => "center-block img-responsive img-thumbnail") %>
+                    <h3><%= article.name %></h3>
+                    <p><%= raw article.content.truncate(180) %></p>
+                    <p><%= link_to("... czytaj więcej", {:action => "news", :article_id => article.id}, :class => 'btn btn-danger') %>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="galleries">
+    <div class="container">
+        <div class="col-lg-12 galleries_header">
+            <h1>Galerie zdjęć</h1>
+        </div>
+        <% @galleries.each do |gallery| %>
+        <div class="row gallery">
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                <h2><%= gallery.name %></h2>
+                <p class="lead"><%= truncate(gallery.description, :length => 300, :omission => "[...]") %></p>
+                <p><%= link_to("Pokaż galerię", {:action => 'galleries', :gallery_id => gallery.id}, :class => 'btn btn-danger hidden-xs') %></p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-0 col-md-5 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                <%= image_tag(gallery.photo.url, :class => "img-responsive img-thumbnail gallery_photo") %>
+                <p><%= link_to("Pokaż galerię", {:action => 'galleries', :gallery_id => gallery.id}, :class => 'btn btn-danger hidden-lg hidden-md hidden-sm visible-xs') %></p>
+            </div>
+        </div>
+
+        <% end %>
+
+    </div>
+</div>
+</section>

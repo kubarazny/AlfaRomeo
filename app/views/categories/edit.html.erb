@@ -1,0 +1,12 @@
+<div class="jumbotron">
+
+<h1>Edycja kategorii <%= @category.name %></h1>
+<%= form_for(:category, :url=> {:action => 'update', :id=>@category.id}) do |field| %>
+<%= render(:partial => "form", :locals => {:field => field}) %>
+<div class="text-center">
+	<%= submit_tag("Aktualizuj", :class=>'btn btn-success') %>
+	<%=link_to("powrót", {:action=>'index'}, :class=>'btn btn-default') %>
+</div>
+<% end %>
+
+</div>

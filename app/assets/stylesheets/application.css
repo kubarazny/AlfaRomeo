@@ -1,0 +1,223 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+    font-family: AlfaRomeo;
+    src: url(alfa.ttf);
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+body {
+    padding-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+body, html {
+    background-color: #fff;
+    height: 100%;
+}
+.jumbotron {
+    margin-top: 30px;
+}
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../assets/glyphicons-halflings-regular.eot');
+    src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../assets/glyphicons-halflings-regular.woff') format('woff'), url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+hr {
+    border-top: 1px solid #000;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #92212a;
+}
+.field_with_errors {}
+.field_with_errors label {
+    color: #ff0000;
+}
+.field_with_errors input {
+    border: 1px solid #ff0000;
+}
+#footer {
+    background-color: #eee;
+    padding-top: 10px;
+    text-align: center;
+}
+a.logo {
+    display: block;
+    width: 130px;
+}
+.logo {
+    background: url(logo.png) 16px 6px no-repeat;
+}
+#content {
+    background: url("bg3.jpg") fixed no-repeat;
+    width: 100%;
+    min-height: 100%;
+    padding: 40px 40px;
+    background-size: cover;
+}
+#top3 {
+    background: url("bg.jpg") fixed no-repeat;
+    width: 100%;
+    min-height: 100%;
+    padding: 40px 40px;
+    background-size: cover;
+}
+.article {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 20px 20px;
+    margin-top: 20px;
+}
+.main_header h1 {
+    text-align: center;
+    font-size: 12rem;
+    text-shadow: 2px 2px 4px #797979;
+    font-family: 'AlfaRomeo';
+    color: #b30317;
+    padding-bottom: 20px;
+}
+.articles_header h1 {
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 4rem;
+    overflow: hidden;
+}
+.articles_header h1:before, .articles_header h1:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+.articles_header h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+.articles_header h1:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+#galleries {
+    background: url("bg2.jpg") fixed no-repeat;
+    width: 100%;
+    min-height: 100%;
+    padding: 40px 40px;
+    background-size: cover;
+}
+.gallery {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 20px 20px;
+    margin-top: 80px;
+}
+.galleries_header h1 {
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+.galleries_header h1:before, .galleries_header h1:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+.galleries_header h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+.galleries_header h1:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+#footer {
+    background-color: #e0e1d3;
+    padding-top: 10px;
+}
+.alert {
+    margin: none !important;
+    margin-top: 30px;
+}
+
+/* RESPONSIVE */
+
+@media(min-width: 1200px) and (max-width:1600px) {
+    .main_header h1 {
+        font-size: 10rem;
+    }
+}
+@media(min-width: 992px) and (max-width: 1199px) {
+    .main_header h1 {
+        font-size: 9rem;
+    }
+}
+@media(min-width: 776px) and (max-width: 991px) {
+    .main_header h1 {
+        font-size: 7rem;
+    }
+    .articles_header h1 {
+        font-size: 3rem;
+    }
+}
+@media (min-width: 481px) and (max-width: 776px) {
+    .main_header h1 {
+        font-size: 6rem;
+    }
+    .articles_header h1 {
+        font-size: 2.5rem;
+    }
+    .gallery h2 {
+        text-align: center;
+    }
+    .gallery .btn {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+    }
+    .article h3 {
+        font-size: 2.5rem;
+    }
+    .gallery h2 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 95%;
+    }
+}
+@media(max-width: 480px) {
+    .main_header h1 {
+        font-size: 5rem;
+    }
+    .articles_header h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 95%;
+    }
+    .article h3 {
+        font-size: 2rem;
+    }
+    .gallery h2 {
+        font-size: 2rem;
+    }
+}

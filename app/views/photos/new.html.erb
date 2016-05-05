@@ -1,0 +1,10 @@
+<div class="jumbotron">
+	<h1>Nowe zdjęcie</h1>
+	<%= form_for(:photo, :url=> {:action => 'create', :gallery_id=>@galleries.id}) do |field| %>
+	<%= render(:partial => "form", :locals => {:field => field}) %> <!-- partial - dla szablonow czesciowych, locals - przekazywanie zmiennych lokalnych, odwolanie sie do zmiennej field i przekazanie jej do generowanego tutaj widoku(render) -->
+	<div class="text-center">
+		<%= submit_tag("Utwórz", :class=>'btn btn-success') %>
+		<%= link_to("powrót", {:action=>'index', :gallery_id=>@galleries.id}, :class=>'btn btn-default')%>
+	</div>
+	<% end %>
+</div>

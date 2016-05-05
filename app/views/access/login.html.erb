@@ -1,0 +1,20 @@
+<div class="form-group">
+<%= form_tag(:action => 'logging') do %>
+<table class="table table-striped">
+
+	<tr>
+		<th><%= label_tag(:user, "Użytkownik: ") %></th>
+		<td><%= text_field_tag(:user) %></td>
+	</tr>
+	<tr>
+		<th><%= label_tag(:password, "Hasło: ") %></th>
+		<td><%= password_field_tag(:password) %></td>
+	</tr>
+	<tr>
+	<td></td>
+	<td><%= submit_tag("Zaloguj", :class => 'btn btn-primary') %></td>
+
+</table>
+
+<%end%>
+</div>

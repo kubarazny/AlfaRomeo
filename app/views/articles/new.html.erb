@@ -1,0 +1,10 @@
+<div class="jumbotron">
+	<h1>Nowy artykuł</h1>
+	<%= form_for(:article, :url=> {:action => 'create', :page_id => @pages.id}) do |field| %>
+	<%= render(:partial => "form", :locals => {:field => field}) %>
+	<div class="text-center">
+		<%= submit_tag("Utwórz", :class=>'btn btn-success') %>
+		<%= link_to("powrót", {:action=>'index', :page_id => @pages.id}, :class=>'btn btn-default')%>
+	</div>
+	<% end %>
+</div>

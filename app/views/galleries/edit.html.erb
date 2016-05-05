@@ -1,0 +1,12 @@
+<div class="jumbotron">
+
+<h1>Edytuj galerię</h1><h2> <%= @gallery.name %></h2>
+<%= form_for(:gallery, :url=> {:action => 'update', :id=>@gallery.id}) do |field| %>
+<%= render(:partial => "form", :locals => {:field => field}) %> <!-- partial - dla szablonow czesciowych, locals - przekazywanie zmiennych lokalnych, odwolanie sie do zmiennej field i przekazanie jej do generowanego tutaj widoku(render) -->
+<div class="text-center">
+	<%= submit_tag("Aktualizuj", :class=>'btn btn-success') %>
+	<%=link_to("usuń", {:action=>'index'}, :class=>'btn btn-default') %>
+</div>
+<% end %>
+
+</div>

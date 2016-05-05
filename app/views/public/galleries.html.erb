@@ -1,0 +1,31 @@
+<% @page_title = @gallery.name %>
+
+<section id="content">
+    <div class="container">
+        <div class="article">
+            <h2><%= @gallery.name %></h2>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <%= @gallery.description %>
+                    <hr/>
+                    <p><%= link_to("wstecz", {:controller => 'public', :action => 'index'}, :class => 'btn btn-info') %></p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <%= image_tag(@gallery.photo.url, :class => 'img-responsive img-thumbnail center-block') %>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px;">
+                <% @gallery.photos.each do |photo| %>
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
+                    <a href="/testapp<%= photo.photo.url %>" data-lightbox="images1" title="<%= photo.description %>">
+                        <%= image_tag(photo.photo.url(:thumb)) %></a>
+                        <br/>
+                        <%= photo.name %>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </section>

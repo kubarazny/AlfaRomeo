@@ -1,0 +1,12 @@
+<div class="jumbotron">
+
+<h1>Edit photo <%= @photo.name %></h1>
+<%= form_for(:photo, :url=> {:action => 'update', :id=>@photo.id, :gallery_id=>@galleries.id}) do |field| %>
+<%= render(:partial => "form", :locals => {:field => field}) %>
+<div class="text-center">
+	<%= submit_tag("Update", :class=>'btn btn-success') %>
+	<%=link_to("Back", {:action=>'index', :gallery_id=>@galleries.id}, :class=>'btn btn-default') %>
+</div>
+<% end %>
+
+</div>
